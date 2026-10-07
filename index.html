@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Louis Plichard – Portfolio</title>
+<meta name="description" content="Portfolio de Louis Plichard, étudiant en cycle ingénieur au CESI Toulouse : projets de cours.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--accent:#e8452c;--accent-dark:#b8321d;--dark:#15191f;--soft:#f1f3f5;--ink:#1d2229;--muted:#555e69;--white:#fff;
+  --font:'Poppins',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
+*{box-sizing:border-box;margin:0}
+body{font-family:var(--font);color:var(--ink);background:var(--white);line-height:1.7}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:62rem;margin:0 auto;padding:0 1.5rem}
+
+.hero{background:var(--dark);color:var(--white);padding:5rem 0 4.5rem;border-bottom:6px solid var(--accent)}
+h1{font-size:clamp(2.6rem,8vw,4.8rem);line-height:1.05;font-weight:700;letter-spacing:.02em}
+.role{font-weight:300;font-size:1.25rem;margin-top:.8rem}
+.intro{margin-top:1.2rem;max-width:36rem;color:#c9ced6}
+
+section{padding:4rem 0 0}
+h2{font-size:1.6rem;font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:.6rem;padding-bottom:.7rem;position:relative}
+h2::after{content:"";position:absolute;left:0;bottom:0;width:3rem;height:4px;border-radius:2px;background:var(--accent)}
+.lead{color:var(--muted);margin:1rem 0 2rem;max-width:40rem}
+
+.projects{display:grid;grid-template-columns:repeat(auto-fill,minmax(17rem,1fr));gap:1.5rem}
+.project{background:var(--soft);border-radius:1rem;padding:1.5rem;display:flex;flex-direction:column;gap:.6rem;border-top:6px solid var(--accent)}
+.project h3{font-size:1.15rem;font-weight:600;line-height:1.35}
+.meta{font-size:.88rem;font-weight:500;color:var(--accent-dark)}
+.project p{color:var(--muted);font-size:.97rem}
+.tags{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:.4rem;margin-top:auto;padding-top:.4rem}
+.tags li{background:var(--white);color:var(--ink);font-size:.8rem;font-weight:500;padding:.1rem .7rem;border-radius:1rem}
+.links{display:flex;gap:1.2rem;font-weight:600;font-size:.95rem}
+.links a{color:var(--accent-dark)}
+
+.about{max-width:42rem}
+footer{margin-top:5rem;background:var(--soft);padding:3rem 0}
+footer h2{margin-bottom:1.2rem}
+footer a{color:var(--accent-dark);font-weight:600}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>Louis Plichard</h1>
+    <p class="role">Étudiant en cycle ingénieur, CESI Toulouse</p>
+    <p class="intro">Voici une sélection de mes projets de cours. Chaque projet présente le contexte, ce que j’ai réalisé et les outils utilisés.</p>
+  </div>
+</header>
+
+<main>
+  <section class="wrap" id="projets">
+    <h2>Mes projets</h2>
+    <p class="lead">Projets réalisés pendant ma formation d’ingénieur.</p>
+
+    <div class="projects">
+      <!--
+        POUR AJOUTER UN PROJET : copie un bloc <article class="project"> … </article>,
+        colle-le juste en dessous, puis remplace les textes.
+        Pour supprimer un lien, enlève simplement la ligne <a> correspondante.
+      -->
+      <article class="project">
+        <h3>Titre de ton projet n°1</h3>
+        <p class="meta">Matière ou module, 2025–2026</p>
+        <p>Explique en deux ou trois phrases le sujet, ton rôle et le résultat obtenu.</p>
+        <ul class="tags"><li>Python</li><li>Travail en équipe</li></ul>
+        <div class="links">
+          <a href="#">Code sur GitHub</a>
+          <a href="#">Rapport</a>
+        </div>
+      </article>
+
+      <article class="project">
+        <h3>Titre de ton projet n°2</h3>
+        <p class="meta">Matière ou module, 2025–2026</p>
+        <p>Explique en deux ou trois phrases le sujet, ton rôle et le résultat obtenu.</p>
+        <ul class="tags"><li>Outil utilisé</li><li>Langage</li></ul>
+        <div class="links">
+          <a href="#">Code sur GitHub</a>
+        </div>
+      </article>
+
+      <article class="project">
+        <h3>Titre de ton projet n°3</h3>
+        <p class="meta">Matière ou module, 2025–2026</p>
+        <p>Explique en deux ou trois phrases le sujet, ton rôle et le résultat obtenu.</p>
+        <ul class="tags"><li>Outil utilisé</li><li>Langage</li></ul>
+        <div class="links">
+          <a href="#">Voir le projet</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="wrap" id="a-propos">
+    <h2>À propos</h2>
+    <p class="about">Étudiant en cycle ingénieur au CESI Toulouse (2025 – 2030), je suis sérieux, organisé et curieux. J’aime le travail structuré et le travail en équipe. En dehors des cours, je lis beaucoup et je m’intéresse à la Formule 1.</p>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <h2>Contact</h2>
+    <p><a href="mailto:plichard.louis@gmail.com">plichard.louis@gmail.com</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
