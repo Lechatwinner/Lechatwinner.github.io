@@ -1,114 +1,779 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Louis Plichard – Portfolio</title>
-<meta name="description" content="Portfolio de Louis Plichard, étudiant en cycle ingénieur au CESI Toulouse : projets de cours.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root{--accent:#e8452c;--accent-dark:#b8321d;--dark:#15191f;--soft:#f1f3f5;--ink:#1d2229;--muted:#555e69;--white:#fff;
-  --font:'Poppins',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
-*{box-sizing:border-box;margin:0}
-body{font-family:var(--font);color:var(--ink);background:var(--white);line-height:1.7}
-a{color:inherit}
-:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
-.wrap{max-width:62rem;margin:0 auto;padding:0 1.5rem}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfolio professionnel de Louis Plichard, étudiant en cycle ingénieur au CESI Toulouse. Parcours, compétences, expériences et CV.">
+  <title>Louis Plichard – Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-.hero{background:var(--dark);color:var(--white);padding:5rem 0 4.5rem;border-bottom:6px solid var(--accent)}
-h1{font-size:clamp(2.6rem,8vw,4.8rem);line-height:1.05;font-weight:700;letter-spacing:.02em}
-.role{font-weight:300;font-size:1.25rem;margin-top:.8rem}
-.intro{margin-top:1.2rem;max-width:36rem;color:#c9ced6}
+  <style>
+    :root {
+      --accent: #c8102e;
+      --accent-dark: #c8102e;
+      --dark: #080808;
+      --soft: #171719;
+      --ink: #f5f5f5;
+      --muted: #c2c2c7;
+      --white: #fff;
+      --font: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    }
 
-section{padding:4rem 0 0}
-h2{font-size:1.6rem;font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:.6rem;padding-bottom:.7rem;position:relative}
-h2::after{content:"";position:absolute;left:0;bottom:0;width:3rem;height:4px;border-radius:2px;background:var(--accent)}
-.lead{color:var(--muted);margin:1rem 0 2rem;max-width:40rem}
+    * {
+      box-sizing: border-box;
+    }
 
-.projects{display:grid;grid-template-columns:repeat(auto-fill,minmax(17rem,1fr));gap:1.5rem}
-.project{background:var(--soft);border-radius:1rem;padding:1.5rem;display:flex;flex-direction:column;gap:.6rem;border-top:6px solid var(--accent)}
-.project h3{font-size:1.15rem;font-weight:600;line-height:1.35}
-.meta{font-size:.88rem;font-weight:500;color:var(--accent-dark)}
-.project p{color:var(--muted);font-size:.97rem}
-.tags{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:.4rem;margin-top:auto;padding-top:.4rem}
-.tags li{background:var(--white);color:var(--ink);font-size:.8rem;font-weight:500;padding:.1rem .7rem;border-radius:1rem}
-.links{display:flex;gap:1.2rem;font-weight:600;font-size:.95rem}
-.links a{color:var(--accent-dark)}
+    body,
+    h1,
+    h2,
+    h3,
+    p {
+      margin: 0;
+    }
 
-.about{max-width:42rem}
-footer{margin-top:5rem;background:var(--soft);padding:3rem 0}
-footer h2{margin-bottom:1.2rem}
-footer a{color:var(--accent-dark);font-weight:600}
-</style>
+    body {
+      background: var(--dark);
+      color: var(--ink);
+      font-family: var(--font);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    a:hover {
+      text-decoration-thickness: 2px;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    .wrap {
+      max-width: 62rem;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid #303034;
+      background: rgb(8 8 8 / 94%);
+      backdrop-filter: blur(12px);
+    }
+
+    .site-nav .wrap {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem 1.5rem;
+      min-height: 4rem;
+    }
+
+    .brand {
+      color: var(--white);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .brand span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.25rem;
+      padding: 0;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.92rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: color 180ms ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-dark);
+    }
+
+    main section {
+      scroll-margin-top: 5rem;
+    }
+
+    .hero {
+      padding: 6rem 0 5rem;
+      border-bottom: 1px solid #29292c;
+      background: var(--dark);
+      color: var(--white);
+    }
+
+    .hero h1 span {
+      color: var(--accent);
+    }
+
+    .hero .wrap::before {
+      display: block;
+      width: 3rem;
+      height: 4px;
+      margin-bottom: 1.5rem;
+      border-radius: 2px;
+      background: var(--accent);
+      content: '';
+    }
+
+    h1 {
+      font-size: clamp(2.6rem, 8vw, 4.8rem);
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      line-height: 1.05;
+    }
+
+    .role {
+      margin-top: 0.8rem;
+      font-size: 1.25rem;
+      font-weight: 300;
+    }
+
+    .intro {
+      max-width: 36rem;
+      margin-top: 1.2rem;
+      color: #c9ced6;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1.75rem;
+    }
+
+    section {
+      padding: 4rem 0 0;
+    }
+
+    h2 {
+      position: relative;
+      margin-bottom: 0.6rem;
+      padding-bottom: 0.7rem;
+      color: var(--white);
+      font-size: 1.6rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    h2::after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 3rem;
+      height: 4px;
+      border-radius: 2px;
+      background: var(--accent);
+      content: '';
+    }
+
+    .lead {
+      max-width: 40rem;
+      margin: 1rem 0 2rem;
+      color: var(--muted);
+    }
+
+    .meta {
+      color: var(--accent-dark);
+      font-size: 0.88rem;
+      font-weight: 500;
+    }
+    footer a {
+      display: inline-block;
+      padding: 0.55rem 0.9rem;
+      border: 1px solid var(--accent);
+      border-radius: 0.45rem;
+      background: var(--accent);
+      color: var(--white);
+      text-decoration: none;
+      transition: background-color 180ms ease, color 180ms ease;
+    }
+
+    footer a:hover {
+      background: transparent;
+      color: var(--accent-dark);
+    }
+
+    .cv-actions {
+      margin: 1.5rem 0;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 0.65rem 1rem;
+      border: 1px solid var(--accent);
+      border-radius: 0.45rem;
+      background: var(--accent);
+      color: var(--white);
+      font-weight: 600;
+      text-decoration: none;
+      transition: background-color 180ms ease, color 180ms ease;
+    }
+
+    .button:hover {
+      background: transparent;
+      color: var(--accent-dark);
+    }
+
+    .button-secondary {
+      border-color: #55555b;
+      background: transparent;
+      color: var(--white);
+    }
+
+    .button-secondary:hover {
+      border-color: var(--accent-dark);
+      color: var(--accent-dark);
+    }
+
+    .content-section {
+      padding-top: 5rem;
+    }
+
+    .eyebrow {
+      margin-bottom: 0.5rem;
+      color: var(--accent-dark);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .section-copy {
+      max-width: 48rem;
+      margin-top: 1rem;
+      color: var(--muted);
+    }
+
+    .project-empty {
+      display: grid;
+      grid-template-columns: 1fr;
+      width: 100%;
+      margin-top: 2rem;
+    }
+
+    .project-year {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.25rem;
+      counter-reset: project;
+      padding: 1.5rem 0 0;
+    }
+
+    .project-year + .project-year {
+      margin-top: 1.5rem;
+      border-top: 1px solid #303034;
+    }
+
+    .project-year h3 {
+      grid-column: 1 / -1;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+      color: var(--accent);
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .project-year h3::after {
+      width: 2.5rem;
+      height: 1px;
+      background: #39393d;
+      content: '';
+    }
+
+    .project-year > p {
+      margin-top: 0.5rem;
+      color: var(--muted);
+    }
+
+    .project-entry {
+      display: grid;
+      grid-template-columns: 1fr;
+      align-content: start;
+      counter-increment: project;
+      margin-bottom: 1rem;
+      padding: 1.5rem;
+      border: 1px solid #303034;
+      border-left: 3px solid var(--accent);
+      border-radius: 0.75rem;
+      background: #141416;
+      box-shadow: 0 0.5rem 1.5rem rgb(0 0 0 / 18%);
+      transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+    }
+
+    .project-entry:hover {
+      transform: translateY(-3px);
+      border-color: #49494f;
+      border-left-color: var(--accent);
+      box-shadow: 0 0.85rem 2rem rgb(0 0 0 / 32%);
+    }
+
+    .project-entry h4 {
+      align-self: start;
+      margin: 0;
+      color: var(--white);
+      font-size: clamp(1.15rem, 2vw, 1.45rem);
+      font-weight: 600;
+      line-height: 1.35;
+    }
+
+    .project-entry h4::before {
+      display: grid;
+      width: 2.2rem;
+      height: 1.7rem;
+      margin-bottom: 0.8rem;
+      place-items: center;
+      border: 1px solid rgb(200 16 46 / 45%);
+      border-radius: 0.4rem;
+      background: rgb(200 16 46 / 13%);
+      color: var(--accent);
+      font-size: 0.75rem;
+      font-variant-numeric: tabular-nums;
+      font-weight: 600;
+      content: counter(project, decimal-leading-zero);
+    }
+
+    .project-entry p {
+      grid-column: 1;
+      max-width: 52rem;
+      margin: 0 0 0.85rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.75;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem 0.55rem;
+      grid-column: 1;
+      margin: 1rem 0 0;
+      padding: 0 0 0.25rem;
+      color: var(--accent-dark);
+      font-size: 0.78rem;
+      list-style: none;
+    }
+
+    .project-tags li {
+      padding: 0.25rem 0.6rem;
+      border: 1px solid #36363b;
+      border-radius: 999px;
+      background: #1b1b1f;
+      color: var(--accent);
+    }
+    .cv-pages {
+      display: grid;
+      justify-items: center;
+      gap: 1.5rem;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .cv-page {
+      max-width: 100%;
+      overflow: hidden;
+      border: 1px solid #303034;
+      border-radius: 0.35rem;
+      background: #fff;
+      box-shadow: 0 1rem 3rem rgb(0 0 0 / 30%);
+    }
+
+    .cv-page canvas {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .cv-status {
+      color: var(--muted);
+      text-align: center;
+    }
+    footer {
+      margin-top: 5rem;
+      padding: 3rem 0;
+      background: var(--soft);
+      border-top: 1px solid #303034;
+    }
+
+    footer h2 {
+      margin-bottom: 1.2rem;
+    }
+
+    .contact-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+    }
+
+    .contact-link svg {
+      width: 1.1rem;
+      height: 1.1rem;
+      flex: 0 0 auto;
+    }
+
+    .back-to-top {
+      position: fixed;
+      right: 1.5rem;
+      bottom: 1.5rem;
+      z-index: 20;
+      display: grid;
+      width: 3rem;
+      height: 3rem;
+      place-items: center;
+      border: 1px solid var(--accent-dark);
+      border-radius: 50%;
+      background: var(--accent);
+      color: var(--white);
+      box-shadow: 0 0.4rem 1.2rem rgb(0 0 0 / 40%);
+      text-decoration: none;
+      font: inherit;
+      cursor: pointer;
+      transition: background-color 180ms ease, transform 180ms ease;
+    }
+
+    .back-to-top:hover {
+      transform: translateY(-3px);
+      background: var(--accent-dark);
+    }
+
+    .back-to-top svg {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    footer a {
+      font-weight: 600;
+    }
+
+    @media (max-width: 30rem) {
+      .wrap {
+        padding-right: 1rem;
+        padding-left: 1rem;
+      }
+
+      .hero {
+        padding: 3.5rem 0;
+      }
+
+      section {
+        padding-top: 3rem;
+      }
+
+      .project-entry {
+        grid-template-columns: 1fr;
+      }
+
+      .project-year {
+        grid-template-columns: 1fr;
+      }
+
+      .project-entry p,
+      .project-tags {
+        grid-column: 1;
+      }
+
+    }
+  </style>
 </head>
+
 <body>
-
-<header class="hero">
-  <div class="wrap">
-    <h1>Louis Plichard</h1>
-    <p class="role">Étudiant en cycle ingénieur, CESI Toulouse</p>
-    <p class="intro">Voici une sélection de mes projets de cours. Chaque projet présente le contexte, ce que j’ai réalisé et les outils utilisés.</p>
-  </div>
-</header>
-
-<main>
-  <section class="wrap" id="projets">
-    <h2>Mes projets</h2>
-    <p class="lead">Projets réalisés pendant ma formation d’ingénieur.</p>
-
-    <div class="projects">
-      <!--
-        POUR AJOUTER UN PROJET : copie un bloc <article class="project"> … </article>,
-        colle-le juste en dessous, puis remplace les textes.
-        Pour supprimer un lien, enlève simplement la ligne <a> correspondante.
-      -->
-      <article class="project">
-        <h3>Titre de ton projet n°1</h3>
-        <p class="meta">Matière ou module, 2025–2026</p>
-        <p>Explique en deux ou trois phrases le sujet, ton rôle et le résultat obtenu.</p>
-        <ul class="tags"><li>Python</li><li>Travail en équipe</li></ul>
-        <div class="links">
-          <a href="#">Code sur GitHub</a>
-          <a href="#">Rapport</a>
-        </div>
-      </article>
-
-      <article class="project">
-        <h3>Titre de ton projet n°2</h3>
-        <p class="meta">Matière ou module, 2025–2026</p>
-        <p>Explique en deux ou trois phrases le sujet, ton rôle et le résultat obtenu.</p>
-        <ul class="tags"><li>Outil utilisé</li><li>Langage</li></ul>
-        <div class="links">
-          <a href="#">Code sur GitHub</a>
-        </div>
-      </article>
-
-      <article class="project">
-        <h3>Titre de ton projet n°3</h3>
-        <p class="meta">Matière ou module, 2025–2026</p>
-        <p>Explique en deux ou trois phrases le sujet, ton rôle et le résultat obtenu.</p>
-        <ul class="tags"><li>Outil utilisé</li><li>Langage</li></ul>
-        <div class="links">
-          <a href="#">Voir le projet</a>
-        </div>
-      </article>
+  <nav class="site-nav" aria-label="Navigation principale">
+    <div class="wrap">
+      <a class="brand" href="#accueil">Louis <span>Plichard</span></a>
+      <ul class="nav-links">
+        <li><a href="#presentation">À propos</a></li>
+        <li><a href="#projets">Projets</a></li>
+        <li><a href="#cv">CV</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </div>
-  </section>
+  </nav>
 
-  <section class="wrap" id="a-propos">
-    <h2>À propos</h2>
-    <p class="about">Étudiant en cycle ingénieur au CESI Toulouse (2025 – 2030), je suis sérieux, organisé et curieux. J’aime le travail structuré et le travail en équipe. En dehors des cours, je lis beaucoup et je m’intéresse à la Formule 1.</p>
-  </section>
-</main>
+  <header class="hero" id="accueil">
+    <div class="wrap">
+      <h1>Louis <span>Plichard</span></h1>
+      <p class="role">Étudiant en cycle ingénieur, CESI Toulouse</p>
+      <p class="intro">Étudiant en cycle ingénieur au CESI Toulouse, je partage ici les projets qui jalonnent mon parcours.</p>
+      <div class="hero-actions">
+        <a class="button" href="#projets">Découvrir mes projets</a>
+        <a class="button button-secondary" href="image/CV.pdf" download>Télécharger mon CV</a>
+      </div>
+    </div>
+  </header>
 
-<footer>
-  <div class="wrap">
-    <h2>Contact</h2>
-    <p><a href="mailto:plichard.louis@gmail.com">plichard.louis@gmail.com</a></p>
-  </div>
-</footer>
+  <main>
+    <section class="wrap content-section" id="presentation" aria-labelledby="profile-title">
+      <p class="eyebrow">À propos</p>
+      <h2 id="profile-title">Ingénieur en devenir, curieux de construire</h2>
+      <p class="section-copy">Je suis étudiant en cycle ingénieur au CESI Toulouse. Ce portfolio met en avant les projets et réalisations qui racontent concrètement mon parcours.</p>
+    </section>
 
+    <section class="wrap content-section" id="projets" aria-labelledby="projects-title">
+      <p class="eyebrow">Réalisations</p>
+      <h2 id="projects-title">Mes projets</h2>
+      <p class="lead">Projets réalisés pendant le cycle préparatoire intégré.</p>
+      <div class="project-empty">
+        <article class="project-year">
+          <h3>CPI A1</h3>
+          <article class="project-entry">
+            <h4>StrongBox 3000</h4>
+                        <p>En équipe de 4, j’ai conçu et réalisé le prototype d’un coffre-fort à authentification multi-niveaux, du besoin initial jusqu’à la validation d’un POC (Proof of Concept). J’ai d’abord conçu en logique combinatoire un premier niveau de sécurité par carte électronique : tables de vérité, tableaux de Karnaugh, circuits simulés sous Falstad. J’ai ensuite dimensionné et monté la version physique avec transistors, LEDs et résistances. Un diviseur de tension génère une tension propre à chaque modèle de carte, que l’Arduino mesure et interprète. Enfin, j’ai conçu puis programmé en langage C (Arduino) le système d’authentification : 6 niveaux de sécurité, chacun combinant des mécanismes différents (questions/réponses, code temporel, scans simulés, vérification agent/CARD_ID). Le projet a été documenté et présenté devant un jury lors d’une soutenance avec démonstration.</p>
+            <ul class="project-tags" aria-label="Technologies et compétences">
+              <li>Arduino</li>
+              <li>C (Arduino)</li>
+              <li>Systèmes embarqués</li>
+              <li>Électronique</li>
+              <li>Logique booléenne</li>
+              <li>Algorithmique</li>
+              <li>Authentification multi-facteurs</li>
+              <li>Cybersécurité</li>
+              <li>Prototypage / POC</li>
+              <li>Travail en équipe</li>
+            </ul>
+          </article>
+          <article class="project-entry">
+            <h4>Fast &amp; Furious</h4>
+            <p>En équipe de 4, j’ai modélisé et simulé le parcours d’une voiture sur un circuit de course (piste d’élan, looping, saut de ravin, ligne d’arrivée) afin de déterminer quel modèle de voiture pouvait réussir le défi sans être endommagé. J’ai d’abord posé le problème : choix des référentiels et des repères pour chaque portion, bilan des forces (poids, réaction du sol, frottements du sol et de l’air). J’ai ensuite établi les équations du mouvement à partir des lois de Newton. Je les ai résolues numériquement en Python avec la méthode d’Euler, pour calculer la vitesse en bas de la pente et en sortie de looping, ainsi que la trajectoire dans le ravin et le temps total.</p>
+            <p>Enfin, j’ai confronté les résultats théoriques à des mesures sur piste en tenant compte des incertitudes de mesure, puis j’ai recommandé un modèle de voiture avec des améliorations. L’étude a été présentée à l’oral devant le client, avec une critique des résultats.</p>
+            <ul class="project-tags" aria-label="Technologies et compétences">
+              <li>Mécanique du point</li>
+              <li>Lois de Newton</li>
+              <li>Équations différentielles</li>
+              <li>Méthode d’Euler</li>
+              <li>Python</li>
+              <li>Simulation numérique</li>
+              <li>Énergie et travail</li>
+              <li>Incertitudes de mesure</li>
+              <li>Modélisation</li>
+              <li>Analyse critique</li>
+            </ul>
+          </article>
+          <article class="project-entry">
+            <h4>Signal de Nançay</h4>
+            <p>En équipe de 4, nous étions chargés d’analyser un signal radio atypique détecté par le radiotélescope de Nançay, puis de concevoir une chaîne complète de réception et de réponse. J’ai d’abord expliqué la chaîne d’acquisition d’un signal radio : captation de l’onde, numérisation, transposition en fréquence jusqu’au son audible. Je l’ai documentée dans un notebook Jupyter (Markdown, LaTeX, schémas Mermaid), avec une première analyse du signal par FFT et spectrogramme en Python.</p>
+            <p>J’ai ensuite dimensionné un filtre analogique RLC d’ordre 2 pour débruiter le signal : fonction de transfert, diagramme de Bode, simulation sous Falstad, puis montage réel mesuré avec AudMes. Enfin, j’ai développé en Python la chaîne numérique : filtrage, démodulation et décodage du message, puis codage, modulation et génération audio d’une réponse. Une simulation entre deux PC a validé l’ensemble. Le projet a été présenté lors d’une soutenance avec démonstration.</p>
+            <ul class="project-tags" aria-label="Technologies et compétences">
+              <li>Traitement du signal</li>
+              <li>Python</li>
+              <li>Jupyter</li>
+              <li>Filtrage analogique et numérique</li>
+              <li>Analyse spectrale (FFT)</li>
+              <li>Diagramme de Bode</li>
+              <li>Modulation / Démodulation</li>
+              <li>Codage / Décodage</li>
+              <li>Radioastronomie</li>
+              <li>Vulgarisation scientifique</li>
+            </ul>
+          </article>
+          <article class="project-entry">
+            <h4>Contain’House</h4>
+            <p>En équipe de 4, nous avons mené en 5 semaines l’étude de faisabilité d’un mini-bâtiment écologique de 25 m² à base de containers maritimes, pour répondre aux besoins d’un client. J’ai d’abord modélisé le projet en 3D sous Revit et produit les plans d’architecte (plan de masse, coupes, vues en plan), que nous avons fait évoluer tout au long du projet. J’ai ensuite dimensionné la structure porteuse des containers et de la terrasse en résistance des matériaux : descente de charge, efforts tranchants et moments fléchissants, déformée, puis choix des profilés. Ces calculs ont été intégrés dans un fichier Excel paramétrable.</p>
+            <p>Enfin, j’ai établi le bilan thermique du bâtiment (déperditions par l’enveloppe et par renouvellement d’air) pour choisir l’isolant, son épaisseur et la puissance du poêle, en me basant sur les normes en vigueur. Le projet a été documenté par des notes de calcul et présenté au client lors d’une soutenance, maquette Revit à l’appui.</p>
+            <ul class="project-tags" aria-label="Technologies et compétences">
+              <li>Revit</li>
+              <li>Maquette numérique 3D</li>
+              <li>Plans d’architecte</li>
+              <li>Résistance des matériaux</li>
+              <li>Dimensionnement de structure</li>
+              <li>Bilan thermique</li>
+              <li>Isolation</li>
+              <li>Excel paramétrable</li>
+              <li>Normes (Eurocodes, NF EN 12831)</li>
+              <li>Argumentation client</li>
+            </ul>
+          </article>
+          <article class="project-entry">
+            <h4>ClearData : qualité de l’air</h4>
+            <p>En équipe de 4, nous avons conçu et réalisé une base de données relationnelle pour centraliser les mesures de qualité de l’air des agences régionales d’un ministère, jusqu’à une démonstration devant un jury jouant le client. J’ai d’abord analysé le besoin client, puis organisé le projet (répartition des tâches, planification, OBS et WBS). J’ai ensuite modélisé la base : dictionnaire de données, modèle conceptuel en 3e forme normale sous Looping, modèle logique et script SQL final avec contraintes d’intégrité.</p>
+            <p>Je l’ai implémentée sous MySQL et peuplée de données réalistes (plus de 200 relevés, 20 employés, 10 rapports). Enfin, j’ai écrit les requêtes demandées en SQL (jointures, agrégations, requêtes imbriquées, procédures stockées), défini les droits de deux comptes utilisateurs (admin et user), choisi le moteur de stockage et optimisé les performances. Le projet a été documenté et présenté lors d’une soutenance commerciale avec démonstration.</p>
+            <ul class="project-tags" aria-label="Technologies et compétences">
+              <li>Bases de données relationnelles</li>
+              <li>SQL</li>
+              <li>MySQL</li>
+              <li>Modélisation MCD / MLD</li>
+              <li>Normalisation (3FN)</li>
+              <li>Algèbre relationnelle</li>
+              <li>Requêtes avancées</li>
+              <li>Gestion des droits</li>
+              <li>Optimisation</li>
+              <li>Gestion de projet</li>
+            </ul>
+          </article>
+          <article class="project-entry">
+            <h4>Dispositif AQM</h4>
+            <p>En équipe de 4, nous avons conçu et préparé la mise en production d’un dispositif IoT autonome de mesure de la qualité de l’air, pour une start-up cliente, avec un objectif de 10 000 unités en quatre mois. J’ai d’abord réalisé l’analyse fonctionnelle du besoin, puis conçu sous Fusion 360 le boîtier en deux coques (ABS) intégrant tous les composants électroniques. J’ai produit le plan coté et un prototype à l’échelle 1 imprimé en 3D. J’ai ensuite défini le processus de fabrication : nomenclature, gamme d’assemblage et planning prévisionnel de production.</p>
+            <p>J’ai également analysé la capabilité de deux presses à injecter à partir de mesures sur pièces étalons (statistiques sous Excel, loi normale, indicateurs de capabilité). Enfin, j’ai établi le coût de revient (coûts directs, indirects, fixes et variables) pour proposer un prix de vente respectant la marge minimale de 25 %. Le travail a été rassemblé dans un dossier de synthèse et présenté à la direction lors d’une soutenance avec le prototype.</p>
+            <ul class="project-tags" aria-label="Technologies et compétences">
+              <li>Fusion 360</li>
+              <li>CAO</li>
+              <li>Impression 3D</li>
+              <li>Analyse fonctionnelle</li>
+              <li>Processus de fabrication</li>
+              <li>Capabilité (statistiques qualité)</li>
+              <li>Coût de revient</li>
+              <li>Excel</li>
+              <li>IoT</li>
+              <li>Gestion de projet</li>
+            </ul>
+          </article>
+        </article>
+        <article class="project-year">
+          <h3>CPI A2</h3>
+          <p>Les projets de cette année seront présentés ici.</p>
+        </article>
+      </div>
+    </section>
+    <section class="wrap content-section cv-section" id="cv" aria-labelledby="cv-title">
+      <p class="eyebrow">Document</p>
+      <h2 id="cv-title">Mon CV</h2>
+      <p class="lead">Consultez mon CV complet ou téléchargez-le au format PDF.</p>
+      <div class="cv-actions">
+        <a class="button" href="image/CV.pdf" download>Télécharger mon CV</a>
+      </div>
+      <div id="cv-pages" class="cv-pages" aria-label="Aperçu du CV">
+        <p class="cv-status" role="status">Chargement du CV…</p>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="wrap">
+      <h2 id="contact-title">Contact</h2>
+      <p class="contact-list">
+        <a class="contact-link" href="tel:+33783459397">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 11.19 18a19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.09 3.18 2 2 0 0 1 4.08 1h3a2 2 0 0 1 2 1.72c.12.96.35 1.9.69 2.8a2 2 0 0 1-.45 2.11L8.05 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.84.57 2.8.69A2 2 0 0 1 22 16.92z" />
+          </svg>
+          <span>07 83 45 93 97</span>
+        </a>
+        <a class="contact-link" href="mailto:plichard.louis@gmail.com">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2" />
+            <path d="m22 7-10 6L2 7" />
+          </svg>
+          <span>plichard.louis@gmail.com</span>
+        </a>
+      </p>
+    </div>
+  </footer>
+  <button class="back-to-top" type="button" aria-label="Remonter en haut de page" title="Retour en haut">
+    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m5 12 7-7 7 7" />
+      <path d="M12 19V5" />
+    </svg>
+  </button>
+  <script type="module">
+    const pdfUrl = 'image/CV.pdf';
+    const pagesContainer = document.querySelector('#cv-pages');
+
+    async function displayCv() {
+      try {
+        const pdfjsLib = await import('./vendor/pdfjs/pdf.mjs');
+        pdfjsLib.GlobalWorkerOptions.workerSrc =
+          new URL('./pdf.worker.mjs', import.meta.url).href;
+
+        const pdfDocument = await pdfjsLib.getDocument(pdfUrl).promise;
+        pagesContainer.replaceChildren();
+
+        for (let pageNumber = 1; pageNumber <= pdfDocument.numPages; pageNumber += 1) {
+          const page = await pdfDocument.getPage(pageNumber);
+          const originalViewport = page.getViewport({ scale: 1 });
+          const availableWidth = pagesContainer.clientWidth;
+          const maxHeight = Math.max(320, window.innerHeight * 0.78);
+          const scale = Math.min(
+            availableWidth / originalViewport.width,
+            maxHeight / originalViewport.height,
+          );
+          const viewport = page.getViewport({ scale });
+          const outputScale = window.devicePixelRatio || 1;
+          const canvas = document.createElement('canvas');
+          const context = canvas.getContext('2d', { alpha: false });
+          const pageWrapper = document.createElement('div');
+
+          pageWrapper.className = 'cv-page';
+          canvas.width = Math.floor(viewport.width * outputScale);
+          canvas.height = Math.floor(viewport.height * outputScale);
+          canvas.style.width = `${Math.floor(viewport.width)}px`;
+          canvas.style.height = `${Math.floor(viewport.height)}px`;
+          pageWrapper.append(canvas);
+          pagesContainer.append(pageWrapper);
+
+          await page.render({
+            canvas,
+            canvasContext: context,
+            viewport,
+            transform: outputScale === 1 ? null : [outputScale, 0, 0, outputScale, 0, 0],
+            background: '#ffffff',
+          }).promise;
+        }
+      } catch (error) {
+        pagesContainer.replaceChildren();
+        console.error('Erreur lors du rendu du CV :', error);
+      }
+    }
+
+    displayCv();
+
+    const backToTop = document.querySelector('.back-to-top');
+    backToTop.addEventListener('click', () => {
+      const startPosition = window.scrollY;
+
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        window.scrollTo(0, 0);
+        return;
+      }
+
+      const duration = Math.min(900, Math.max(350, startPosition / 5));
+      let startTime;
+
+      function scrollToTop(timestamp) {
+        startTime ??= timestamp;
+        const progress = Math.min((timestamp - startTime) / duration, 1);
+        const easedProgress = 1 - (1 - progress) ** 3;
+
+        window.scrollTo(0, startPosition * (1 - easedProgress));
+
+        if (progress < 1) {
+          window.requestAnimationFrame(scrollToTop);
+        }
+      }
+
+      window.requestAnimationFrame(scrollToTop);
+    });
+  </script>
 </body>
 </html>
